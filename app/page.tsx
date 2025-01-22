@@ -1,101 +1,226 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import { useRouter } from "next/navigation";
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+const Home = (): JSX.Element => {
+    const router = useRouter();
+
+    return (
+        <div className="min-h-full">
+            <header className="bg-white shadow">
+                <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                    <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+                        Players List
+                    </h1>
+                </div>
+            </header>
+            <main>
+                <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
+                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <div className="w-full max-w-full p-5 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                            <div className="flow-root">
+                                <ul
+                                    role="list"
+                                    className="divide-y divide-gray-200 dark:divide-gray-700"
+                                >
+                                    <li className="py-3 sm:py-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-1 min-w-0 ms-4">
+                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                                    Neil Sims
+                                                </p>
+                                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                                    Neil
+                                                </p>
+                                            </div>
+                                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                                <a
+                                                    href="#"
+                                                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    onClick={() =>
+                                                        router.push(
+                                                            "/details/id",
+                                                        )
+                                                    }
+                                                >
+                                                    Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="py-3 sm:py-4">
+                                        <div className="flex items-center ">
+                                            <div className="flex-1 min-w-0 ms-4">
+                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                                    Bonnie Green
+                                                </p>
+                                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                                    Bon
+                                                </p>
+                                            </div>
+                                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                                <a
+                                                    href="#"
+                                                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    onClick={() =>
+                                                        router.push(
+                                                            "/details/id",
+                                                        )
+                                                    }
+                                                >
+                                                    Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="py-3 sm:py-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-1 min-w-0 ms-4">
+                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                                    Michael Gough
+                                                </p>
+                                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                                    Mike
+                                                </p>
+                                            </div>
+                                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                                <a
+                                                    href="#"
+                                                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    onClick={() =>
+                                                        router.push(
+                                                            "/details/id",
+                                                        )
+                                                    }
+                                                >
+                                                    Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="py-3 sm:py-4">
+                                        <div className="flex items-center ">
+                                            <div className="flex-1 min-w-0 ms-4">
+                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                                    Lana Byrd
+                                                </p>
+                                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                                    Lana
+                                                </p>
+                                            </div>
+                                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                                <a
+                                                    href="#"
+                                                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    onClick={() =>
+                                                        router.push(
+                                                            "/details/id",
+                                                        )
+                                                    }
+                                                >
+                                                    Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="pt-3 pb-0 sm:pt-4">
+                                        <div className="flex items-center ">
+                                            <div className="flex-1 min-w-0 ms-4">
+                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                                    Thomes Lean
+                                                </p>
+                                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                                                    Tom
+                                                </p>
+                                            </div>
+                                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                                <a
+                                                    href="#"
+                                                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    onClick={() =>
+                                                        router.push(
+                                                            "/details/id",
+                                                        )
+                                                    }
+                                                >
+                                                    Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav
+                        aria-label="Page navigation example"
+                        className="pt-4 text-center"
+                    >
+                        <ul className="inline-flex -space-x-px text-sm">
+                            <li>
+                                <a
+                                    href="#"
+                                    className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >
+                                    Previous
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    aria-current="page"
+                                    className="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                                >
+                                    3
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >
+                                    4
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >
+                                    5
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </main>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+    );
+};
+
+export default Home;
