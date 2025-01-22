@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
         "target": "ES6",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
@@ -19,9 +20,11 @@
             }
         ],
         "paths": {
-            "@/*": ["./*"]
+            "@app/*": ["app/*"],
+            "@components/*": ["components/*"]
         }
     },
+    "files": ["./setupTest.ts"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]
 }

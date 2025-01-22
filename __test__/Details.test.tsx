@@ -1,6 +1,6 @@
 import { expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Home from "@app/page";
+import Details from "@app/details/[slug]/page";
 
 //mock next/navigation with next-router-mock
 vi.mock("next/navigation", async (importOriginal) => {
@@ -24,11 +24,9 @@ vi.mock("next/navigation", async (importOriginal) => {
     };
 });
 
-describe("Home", () => {
+describe("Details", () => {
     it("Players List should be rendered", async () => {
-        render(<Home />);
-        expect(await screen.findByText("Players List")).toBeInTheDocument();
+        render(<Details />);
+        expect(await screen.findByText("Player Details")).toBeInTheDocument();
     });
 });
-
-//to-check: ids, components
