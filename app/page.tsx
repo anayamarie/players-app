@@ -8,15 +8,13 @@ const Home = (): JSX.Element => {
     return (
         <div className="min-h-full">
             <header className="bg-white shadow">
-                <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                        Players List
-                    </h1>
+                <div className="header-container">
+                    <h1 className="header-styled">Players List</h1>
                 </div>
             </header>
             <main>
-                <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
-                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div className="body-container">
+                    <div className="body-container-styled">
                         <div className="w-full max-w-full p-5 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                             <div className="flow-root">
                                 <ul
@@ -35,7 +33,6 @@ const Home = (): JSX.Element => {
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                                 <a
-                                                    href="#"
                                                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                                     onClick={() =>
                                                         router.push(
@@ -60,7 +57,6 @@ const Home = (): JSX.Element => {
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                                 <a
-                                                    href="#"
                                                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                                     onClick={() =>
                                                         router.push(
@@ -85,7 +81,6 @@ const Home = (): JSX.Element => {
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                                 <a
-                                                    href="#"
                                                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                                     onClick={() =>
                                                         router.push(
@@ -110,7 +105,6 @@ const Home = (): JSX.Element => {
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                                 <a
-                                                    href="#"
                                                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                                     onClick={() =>
                                                         router.push(
@@ -135,7 +129,6 @@ const Home = (): JSX.Element => {
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                                 <a
-                                                    href="#"
                                                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                                     onClick={() =>
                                                         router.push(
@@ -154,37 +147,23 @@ const Home = (): JSX.Element => {
                     </div>
 
                     <nav
-                        aria-label="Page navigation example"
+                        aria-label="Page navigation"
                         className="pt-4 text-center"
                     >
                         <ul className="inline-flex -space-x-px text-sm">
                             <li>
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                >
+                                <a className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                     Previous
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                >
-                                    1
-                                </a>
+                                <a className="unselected-page-styled">1</a>
+                            </li>
+                            <li>
+                                <a className="unselected-page-styled">2</a>
                             </li>
                             <li>
                                 <a
-                                    href="#"
-                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                >
-                                    2
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
                                     aria-current="page"
                                     className="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
                                 >
@@ -192,26 +171,13 @@ const Home = (): JSX.Element => {
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                >
-                                    4
-                                </a>
+                                <a className="unselected-page-styled">4</a>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                >
-                                    5
-                                </a>
+                                <a className="unselected-page-styled">5</a>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                >
+                                <a className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                     Next
                                 </a>
                             </li>

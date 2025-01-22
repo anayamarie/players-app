@@ -8,20 +8,15 @@ const Details = (): JSX.Element => {
     return (
         <div className="min-h-full">
             <header className="bg-white shadow">
-                <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900 md:my-5">
-                        Player Details
-                    </h1>
+                <div className="header-container">
+                    <h1 className="header-styled md:mb-5">Player Details</h1>
                     <nav className="flex" aria-label="Breadcrumb">
                         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                             <li
                                 className="inline-flex items-center"
                                 onClick={() => router.push("/")}
                             >
-                                <a
-                                    href="#"
-                                    className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
-                                >
+                                <a className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                                     <svg
                                         className="w-3 h-3 me-2.5"
                                         aria-hidden="true"
@@ -59,8 +54,8 @@ const Details = (): JSX.Element => {
                 </div>
             </header>
             <main>
-                <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
-                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg text-center">
+                <div className="body-container">
+                    <div className="body-container-styled text-center">
                         <figure className="p-5">
                             <img
                                 className="h-auto max-w-full rounded-lg w-40 h-40 mx-auto border-4 border-gray-500/50"
@@ -70,24 +65,20 @@ const Details = (): JSX.Element => {
                         </figure>
                         <dl className="max-w-full text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700 p-5">
                             <div className="flex flex-col pb-3">
-                                <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                                    Name
-                                </dt>
-                                <dd className="text-lg font-semibold">
+                                <dt className="detail-label-styled">Name</dt>
+                                <dd className="detail-value-styled">
                                     Neil Sims
                                 </dd>
                             </div>
                             <div className="flex flex-col py-3">
-                                <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
-                                    Gender
-                                </dt>
-                                <dd className="text-lg font-semibold">Male</dd>
+                                <dt className="detail-label-styled">Gender</dt>
+                                <dd className="detail-value-styled">Male</dd>
                             </div>
                             <div className="flex flex-col pt-3">
-                                <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                                <dt className="detail-label-styled">
                                     Nationality
                                 </dt>
-                                <dd className="text-lg font-semibold">
+                                <dd className="detail-value-styled">
                                     Australian
                                 </dd>
                             </div>
