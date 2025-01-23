@@ -4,7 +4,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export default async () => {
     const cancelToken = axios.CancelToken;
     const sourceToken = cancelToken.source();
-    const URL = `${API_URL}?format=true&route=persons&fields=personId,nameFullLocal,nameAbbreviated&hideNull=true`;
+    const URL = `${API_URL}?format=true&route=persons&fields=personId,nameFullLocal,images&hideNull=true`;
     try {
         const res = await axios
             .get(URL, {

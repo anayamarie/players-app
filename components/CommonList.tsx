@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface CommonListProps {
     currentOffset: number;
@@ -19,18 +20,25 @@ const CommonList = ({
         const startIndex = (currentOffset - 1) * limit;
         return players?.slice(startIndex, startIndex + limit);
     };
-
-    type rowDataProps = { [key: string]: string };
-    const renderRow = (rowData: rowDataProps, index: number) => {
+    const renderRow = (
+        rowData: any, // eslint-disable-line
+        index: number,
+    ) => {
         return (
             <li className="py-3 sm:py-4" key={index}>
                 <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                        <Image
+                            className="w-8 h-8 rounded-full border-1 border-blue-500/50"
+                            src={rowData?.images?.[0]?.url || "/fallback.png"}
+                            alt="player image"
+                            width="50"
+                            height="50"
+                        />
+                    </div>
                     <div className="flex-1 min-w-0 ms-4">
-                        <p className="text-sm font-medium text-gray-900 trunc`ate dark:text-white">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             {rowData?.nameFullLocal}
-                        </p>
-                        <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                            {rowData?.nameAbbreviated}
                         </p>
                     </div>
                     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
@@ -48,7 +56,7 @@ const CommonList = ({
         );
     };
     return (
-        <div className="w-full max-w-5xl p-5 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div className="body-container-border">
             <div className="flow-root">
                 <ul
                     role="list"
