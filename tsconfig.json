@@ -21,7 +21,8 @@
         ],
         "paths": {
             "@app/*": ["app/*"],
-            "@components/*": ["components/*"]
+            "@components/*": ["components/*"],
+            "@services/*": ["services/*"]
         }
     },
     "files": ["./setupTest.ts"],
