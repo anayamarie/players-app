@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 interface CommonListProps {
     currentOffset: number;
     limit: number;
-    players: {}[];
+    players: any;
 }
 
 const CommonList = ({
