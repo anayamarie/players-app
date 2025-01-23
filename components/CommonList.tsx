@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 interface CommonListProps {
     currentOffset: number;
     limit: number;
-    players: any;
+    players: [];
 }
 
 const CommonList = ({
@@ -17,7 +17,7 @@ const CommonList = ({
 
     const filterData = () => {
         const startIndex = (currentOffset - 1) * limit;
-        return players.slice(startIndex, startIndex + limit);
+        return players?.slice(startIndex, startIndex + limit);
     };
 
     type rowDataProps = { [key: string]: string };

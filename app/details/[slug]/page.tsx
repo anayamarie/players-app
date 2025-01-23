@@ -8,9 +8,13 @@ import useFetchPlayerDetails from "hooks/useFetchPlayerDetails";
 
 const Details = (): JSX.Element => {
     const param = useParams();
-    const { playerDetails, isLoading }: any = useFetchPlayerDetails({
-        personId: param?.slug,
-    });
+    const {
+        playerDetails,
+        isLoading,
+    }: { playerDetails: any; isLoading: boolean } = // eslint-disable-line
+        useFetchPlayerDetails({
+            personId: param?.slug,
+        });
     const imageLength = playerDetails?.images?.length > 0 ? true : false;
     return (
         <div className="min-h-full">

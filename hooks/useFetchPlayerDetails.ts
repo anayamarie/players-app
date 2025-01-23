@@ -31,7 +31,8 @@ const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
         fetchPlayerDetails();
     }, []);
 
-    return { playerDetails, isLoading, errorInAPI, isServerError };
+    // return { playerDetails, isLoading, errorInAPI, isServerError };
+    return { playerDetails, isLoading };
 };
 
 export default useFetchPlayerDetails;

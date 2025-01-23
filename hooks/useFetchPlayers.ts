@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import GetPlayersList from "@services/GetPlayersList";
 
 const useFetchPlayers = () => {
-    const [players, setPlayers] = useState<{}[]>([]);
+    const [players, setPlayers] = useState<[]>([]);
     const [playersLength, setPlayersLength] = useState<number>(0);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [errorInAPI, setErrorInAPI] = useState<boolean>(false);
