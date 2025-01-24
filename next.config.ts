@@ -3,7 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
     /* config options here */
     images: {
-        domains: ["images.dc.prod.cloud.atriumsports.com"],
+        remotePatterns: [
+            {
+                hostname: "images.dc.prod.cloud.atriumsports.com",
+            },
+        ],
     },
 };
 

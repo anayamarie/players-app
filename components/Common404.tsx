@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 const Common404 = (): JSX.Element => {
     const router = useRouter();
     return (
-        <div className="body-container-border   ">
+        <div className="body-container-border">
             <div className="p-8">
                 <h1 className="mb-4 text-4xl font-bold">404</h1>
                 <p className="text-gray-600 pb-5">

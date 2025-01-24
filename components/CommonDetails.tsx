@@ -22,19 +22,19 @@ const CommonDetails = ({
                 <div className="flex flex-col pb-3">
                     <dt className="detail-label-styled">Name</dt>
                     <dd className="detail-value-styled">
-                        {playerDetails?.nameFullLocal}
+                        {playerDetails?.nameFullLocal || ""}
                     </dd>
                 </div>
                 <div className="flex flex-col py-3">
                     <dt className="detail-label-styled">Gender</dt>
                     <dd className="detail-value-styled">
-                        {playerDetails?.gender}
+                        {playerDetails?.gender || ""}
                     </dd>
                 </div>
                 <div className="flex flex-col pt-3">
                     <dt className="detail-label-styled">Nationality</dt>
                     <dd className="detail-value-styled">
-                        {playerDetails?.nationality}
+                        {playerDetails?.nationality || ""}
                     </dd>
                 </div>
             </dl>

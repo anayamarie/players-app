@@ -28,7 +28,7 @@ const Details = (): JSX.Element => {
             {isLoading ? (
                 <CommonSpinner />
             ) : (
-                <main>
+                <main aria-label="Player Details">
                     <div className="body-container">
                         <div className="body-container-styled text-center">
                             {playerDetailsLength === 0 ? (

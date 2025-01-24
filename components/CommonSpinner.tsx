@@ -2,7 +2,10 @@
 
 const CommonSpinner = (): JSX.Element => {
     return (
-        <div className="flex justify-center items-center sbg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-48">
+        <div
+            id="loading-spinner"
+            className="flex justify-center items-center sbg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-48"
+        >
             <div role="status">
                 <svg
                     aria-hidden="true"

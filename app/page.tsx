@@ -35,7 +35,7 @@ const Home = (): JSX.Element => {
     return (
         <div className="min-h-full">
             <CommonHeader title={"Players List"} hasBreadCrumbs={false} />
-            <main>
+            <main aria-label="Players Table">
                 <div className="body-container">
                     {isLoading ? (
                         <CommonSpinner />
