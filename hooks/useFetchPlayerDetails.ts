@@ -3,6 +3,7 @@ import GetPlayerDetails from "@services/GetPlayerDetails";
 
 const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
     const [playerDetails, setPlayerDetails] = useState<{}>({});
+    const [playerDetailsLength, setPlayerDetailsLength] = useState<number>(0);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [errorInAPI, setErrorInAPI] = useState<boolean>(false);
     const [isServerError, setIsServerError] = useState<boolean>(false);
@@ -16,6 +17,7 @@ const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
                     if (length === 0) {
                         setErrorInAPI(true);
                     }
+                    setPlayerDetailsLength(length);
                     setPlayerDetails(length > 0 ? res[0] : {});
                 } else {
                     setErrorInAPI(true);
@@ -31,8 +33,13 @@ const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
         fetchPlayerDetails();
     }, []);
 
-    // return { playerDetails, isLoading, errorInAPI, isServerError };
-    return { playerDetails, isLoading };
+    return {
+        playerDetailsLength,
+        playerDetails,
+        isLoading,
+        errorInAPI,
+        isServerError,
+    };
 };
 
 export default useFetchPlayerDetails;
