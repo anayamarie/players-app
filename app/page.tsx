@@ -6,6 +6,7 @@ import CommonHeader from "@components/CommonHeader";
 import CommonList from "@components/CommonList";
 import CommonPagination from "@components/CommonPagination";
 import CommonSpinner from "@components/CommonSpinner";
+import CommonError from "@components/CommonError";
 //hooks
 import useFetchPlayers from "hooks/useFetchPlayers";
 export interface offsetFnProp {
@@ -15,7 +16,8 @@ export interface offsetFnProp {
 const Home = (): JSX.Element => {
     const [offset, setOffset] = useState<number>(1);
     const [limit] = useState<number>(10);
-    const { playersLength, players, isLoading } = useFetchPlayers();
+    const { playersLength, players, isLoading, isServerError } =
+        useFetchPlayers();
 
     const getTotalPages = () => {
         let pages = Number(playersLength / limit);
@@ -42,17 +44,23 @@ const Home = (): JSX.Element => {
                     ) : (
                         <div>
                             <div className="body-container-styled">
-                                <CommonList
-                                    currentOffset={offset}
-                                    limit={limit}
-                                    players={players}
-                                />
+                                {isServerError ? (
+                                    <CommonError />
+                                ) : (
+                                    <CommonList
+                                        currentOffset={offset}
+                                        limit={limit}
+                                        players={players}
+                                    />
+                                )}
                             </div>
-                            <CommonPagination
-                                page={offset}
-                                totalPages={getTotalPages()}
-                                getCurrentPage={getCurrentPage}
-                            />
+                            {!isServerError && (
+                                <CommonPagination
+                                    page={offset}
+                                    totalPages={getTotalPages()}
+                                    getCurrentPage={getCurrentPage}
+                                />
+                            )}
                         </div>
                     )}
                 </div>

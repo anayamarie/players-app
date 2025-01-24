@@ -5,7 +5,6 @@ const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
     const [playerDetails, setPlayerDetails] = useState<{}>({});
     const [playerDetailsLength, setPlayerDetailsLength] = useState<number>(0);
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [errorInAPI, setErrorInAPI] = useState<boolean>(false);
     const [isServerError, setIsServerError] = useState<boolean>(false);
 
     useEffect(() => {
@@ -14,13 +13,8 @@ const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
                 const res = await GetPlayerDetails({ personId });
                 if (res) {
                     const length = res.length;
-                    if (length === 0) {
-                        setErrorInAPI(true);
-                    }
                     setPlayerDetailsLength(length);
                     setPlayerDetails(length > 0 ? res[0] : {});
-                } else {
-                    setErrorInAPI(true);
                 }
             } catch (err) {
                 console.error("Empty Players", err);
@@ -37,7 +31,6 @@ const useFetchPlayerDetails = ({ personId }: { personId: any }) => {
         playerDetailsLength,
         playerDetails,
         isLoading,
-        errorInAPI,
         isServerError,
     };
 };
