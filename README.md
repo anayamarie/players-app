@@ -26,13 +26,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Technology and Tools Used
 
-— TypeScript
-— ReactJS
-— NextJS
-— Axios
-— TailwindCSS
-— Vitest
-— Vercel
+-   TypeScript
+-   ReactJS
+-   NextJS
+-   Axios
+-   TailwindCSS
+-   Vitest
+-   Vercel
 
 ## Notes
 
